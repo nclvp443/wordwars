@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +18,8 @@ namespace wordwars1
         private OleDbDataReader dr;
         public string word = "";
         string query;
-
+        private DateTime time = DateTime.Now + new TimeSpan(0, 3, 0);
+        private TimeSpan rem = TimeSpan.FromMinutes(3);
 
         public Form1()
         {
@@ -30,7 +31,22 @@ namespace wordwars1
         
         private void Start_Click(object sender, EventArgs e)
         {
-            
+            var rand = new Random();
+
+            foreach (Control c in Controls)
+            {
+                if (c is Button)
+                {
+                    c.Text = arr[rand.Next(arr.Length)];
+                    c.Enabled = true;
+                }
+            }
+
+            time = DateTime.Now + new TimeSpan(0, 3, 1);
+            timeLabel.Text = rem.ToString(@"m\:ss"); ;
+            Attack.Text = "Attack";
+            Start.Text = "Start";
+            timer1.Enabled = true;
         }
 
         private void Attack_Click(object sender, EventArgs e)
@@ -63,6 +79,7 @@ namespace wordwars1
                 {
                     string grt = "No Word!";
                     MessageBox.Show(grt);
+			   MessageBox.show("Test");
                 }
             }
             catch (Exception q)
@@ -73,6 +90,12 @@ namespace wordwars1
             {
                 label1.Text = "";
                 con.Close();
+            }
+
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                c.Enabled = true;
             }
         }
 
@@ -93,10 +116,26 @@ namespace wordwars1
                 if (c is Button)
                 {
                     c.Text = arr[rand.Next(arr.Length)];
+                    c.Enabled = false;
                 }
             }
 
+            Start.Enabled = true;
             Attack.Text = "Attack";
+            Start.Text = "Start";
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            rem = time - DateTime.Now;
+            timeLabel.Text = rem.ToString(@"m\:ss");
+            
+            if (rem <= TimeSpan.Zero)
+            {
+                timer1.Stop();
+                timeLabel.Visible = false;
+                label2.Visible = true;
+            }
         }
 
     }
