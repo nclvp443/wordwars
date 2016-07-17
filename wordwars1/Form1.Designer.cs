@@ -366,6 +366,7 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.Attack;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 390);
@@ -399,6 +400,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Attack);
             this.Controls.Add(this.Start);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Word Wars";
