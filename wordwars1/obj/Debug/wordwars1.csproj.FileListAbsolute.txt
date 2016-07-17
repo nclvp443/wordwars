@@ -7,3 +7,6 @@ c:\users\rowellchristian\documents\visual studio 2013\Projects\wordwars1\wordwar
 c:\users\rowellchristian\documents\visual studio 2013\Projects\wordwars1\wordwars1\obj\Debug\wordwars1.csproj.GenerateResource.Cache
 c:\users\rowellchristian\documents\visual studio 2013\Projects\wordwars1\wordwars1\obj\Debug\wordwars1.exe
 c:\users\rowellchristian\documents\visual studio 2013\Projects\wordwars1\wordwars1\obj\Debug\wordwars1.pdb
+C:\Users\Corleone\Documents\wordwars\wordwars1\bin\Debug\wordwars1.exe.config
+C:\Users\Corleone\Documents\wordwars\wordwars1\obj\Debug\wordwars1.exe
+C:\Users\Corleone\Documents\wordwars\wordwars1\obj\Debug\wordwars1.pdb
